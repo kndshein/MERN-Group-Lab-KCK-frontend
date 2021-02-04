@@ -31,7 +31,7 @@ const Display = (props) => {
               <div className="song-time">
                 <strong>{song.time}</strong>
               </div>
-              <button className="song-favorite">+</button>
+              <button className="song-favorite">0</button>
             </div>
           );
         })}
