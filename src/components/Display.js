@@ -5,7 +5,6 @@ const Display = (props) => {
     <div className="display-container">
       <div className="header-container">
         <h1 className="display-title">
-          {" "}
           <span className="tuna">tuna</span>.tunr
         </h1>
         <p className="catch-phrase">
