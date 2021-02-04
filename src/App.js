@@ -7,7 +7,7 @@ import Form from "./components/Form";
 
 function App() {
   // Url variable
-  const url = "http://localhost:3000";
+  const url = "http://localhost:4000";
 
   // States
   const [songs, setSongs] = React.useState([]);
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <Display />
+      <Display songs={songs} />
       <Form />
     </div>
   );

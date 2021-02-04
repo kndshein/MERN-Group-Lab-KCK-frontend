@@ -1,11 +1,11 @@
 import React from "react";
 
 const Display = (props) => {
+  console.log("Display Props", props);
   return (
     <div className="display-container">
       <div className="header-container">
         <h1 className="display-title">
-          {" "}
           <span className="tuna">tuna</span>.tunr
         </h1>
         <p className="catch-phrase">
@@ -16,15 +16,21 @@ const Display = (props) => {
         <h2>
           <strong>Playlist</strong>
         </h2>
-        <div className="song-container">
-          <div className="song-title">
-            <strong>DummyTitle</strong>{" "}
-          </div>
-          <div className="artist">
-            <strong>DummyArtist</strong>{" "}
-          </div>
-          <div className="song-time">4:30</div>
-        </div>
+        {props.songs.map((song) => {
+          return (
+            <div className="song-container">
+              <div className="song-title">
+                <strong>{song.title}</strong>
+              </div>
+              <div className="artist">
+                <strong>{song.artist}</strong>
+              </div>
+              <div className="song-album">{song.album}</div>
+              <div className="song-time">{song.time}</div>
+              <button className="song-favorite">O</button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
