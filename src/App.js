@@ -11,6 +11,7 @@ function App() {
 
   // States
   const [songs, setSongs] = React.useState([]);
+  const [favoritedSong, setFavoritedSong] = React.useState([]);
 
   // Empty API
   const emptySong = {
@@ -39,14 +40,26 @@ function App() {
     });
   };
 
+  const handleFavorite = (song) => {
+    setFavoritedSong({ ...favoritedSong }, song);
+  };
+
   React.useEffect(() => {
     getSongs();
   }, []);
 
   return (
     <div className="App">
-      <Display songs={songs} handleDelete={handleDelete} />
-      <Form song={emptySong} handleSubmit={handleCreate} />
+      <Display
+        songs={songs}
+        handleDelete={handleDelete}
+        handleFavorite={handleFavorite}
+      />
+      <Form
+        song={emptySong}
+        handleSubmit={handleCreate}
+        favoritedSong={favoritedSong}
+      />
     </div>
   );
 }
