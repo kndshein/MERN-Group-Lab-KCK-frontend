@@ -7,7 +7,7 @@ import Form from "./components/Form";
 
 function App() {
   // Url variable
-  const url = "http://localhost:4000";
+  const url = "https://tunatunr.herokuapp.com";
 
   // States
   const [songs, setSongs] = React.useState([]);
