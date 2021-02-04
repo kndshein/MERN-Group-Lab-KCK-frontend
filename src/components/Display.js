@@ -6,7 +6,7 @@ const Display = (props) => {
     <div className="display-container">
       <div className="header-container">
         <h1 className="display-title">
-          <span className="tuna">tuna</span>.tunr
+          <span className="tuna">tuna.</span>tunr
         </h1>
         <p className="catch-phrase">
           "Drop the <span className="bass">bass"</span>
@@ -31,7 +31,12 @@ const Display = (props) => {
               <div className="song-time">
                 <strong>{song.time}</strong>
               </div>
-              <button className="song-favorite">+</button>
+              <button
+                className="song-favorite"
+                onClick={() => props.handleFavorite(song)}
+              >
+                +
+              </button>
               <button
                 className="song-delete"
                 onClick={() => props.handleDelete(song)}
@@ -41,6 +46,7 @@ const Display = (props) => {
             </div>
           );
         })}
+        <div className="favorite-container"></div>
       </div>
     </div>
   );
