@@ -12,10 +12,30 @@ function App() {
   // States
   const [songs, setSongs] = React.useState([]);
 
+  // Empty API
+  const emptySong = {
+    name: "",
+    album: "",
+    artist: "",
+    time: "",
+  };
+
   // Function to get list of songs
   const getSongs = () => {
     axios.get(url + "/tunatunr").then((response) => {
       setSongs(response.data);
+    });
+  };
+
+  const handleCreate = (song) => {
+    axios.post(url + "/tunatunr", song).then(() => {
+      getSongs();
+    });
+  };
+
+  const handleDelete = (song) => {
+    axios.delete(url + "/tunatunr/id/" + song._id).then(() => {
+      getSongs();
     });
   };
 
@@ -25,8 +45,8 @@ function App() {
 
   return (
     <div className="App">
-      <Display songs={songs} />
-      <Form />
+      <Display songs={songs} handleDelete={handleDelete} />
+      <Form song={emptySong} handleSubmit={handleCreate} />
     </div>
   );
 }

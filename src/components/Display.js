@@ -27,7 +27,13 @@ const Display = (props) => {
               </div>
               <div className="song-album">{song.album}</div>
               <div className="song-time">{song.time}</div>
-              <button className="song-favorite">O</button>
+              <div className="song-favorite">O</div>
+              <div
+                className="song-delete"
+                onClick={() => props.handleDelete(song)}
+              >
+                X
+              </div>
             </div>
           );
         })}
