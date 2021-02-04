@@ -32,6 +32,12 @@ const Display = (props) => {
                 <strong>{song.time}</strong>
               </div>
               <button className="song-favorite">+</button>
+              <button
+                className="song-delete"
+                onClick={() => props.handleDelete(song)}
+              >
+                X
+              </button>
             </div>
           );
         })}
