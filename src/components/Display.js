@@ -20,14 +20,18 @@ const Display = (props) => {
           return (
             <div className="song-container">
               <div className="song-title">
-                <strong>{song.title}</strong>
+                <strong>{song.name}</strong>
               </div>
               <div className="artist">
                 <strong>{song.artist}</strong>
               </div>
-              <div className="song-album">{song.album}</div>
-              <div className="song-time">{song.time}</div>
-              <button className="song-favorite">O</button>
+              <div className="song-album">
+                <strong>{song.album}</strong>
+              </div>
+              <div className="song-time">
+                <strong>{song.time}</strong>
+              </div>
+              <button className="song-favorite">+</button>
             </div>
           );
         })}
