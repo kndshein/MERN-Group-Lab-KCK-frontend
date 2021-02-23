@@ -1,157 +1,275 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Londrina+Solid:wght@400;900&family=Quicksand&display=swap');
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  background: rgb(155,225,255);
-  background: linear-gradient(332deg, rgb(59, 129, 160) 0%, rgb(18, 48, 71) 55%, rgba(0,0,0,1) 100%);
-  min-height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  margin: 0 auto;
-  width: 60vw;
-  color: #e0e0e0;
-}
-
-.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100vh;
+  padding: 100px 50px 50px 50px;
   margin: 0;
-  padding: 0;
-  font-family: 'Londrina Solid', cursive;
+  background-image: linear-gradient(332deg, #0a062b, #3e0f42);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.display-title {
-  display: inline-block;
-  font-size: 5rem;
-  margin-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-span.tuna {
-  color: salmon;
-}
-
-.catch-phrase {
-  margin: 0;
-  padding: 0;
+.display-container {
+  width: 1000px;
+  height: 500px;
   position: relative;
-  bottom: -78px;
+  padding: 25px;
+}
+
+.display-container .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.display-container .header-container::after {
+  display: block;
+  content: "";
+  position: absolute;
   right: 0;
-  font-size: 2rem;
+  width: 58%;
+  height: 7px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+          box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+}
+
+.display-container .header-container #tunatunr-logo {
+  height: 100px;
+  min-width: 40%;
+  width: 20px;
+  margin-top: -100px;
+}
+
+.display-container .header-container #tunatunr-logo svg {
+  z-index: 10;
+  width: 425px;
+  height: 107px;
+  -webkit-filter: drop-shadow(0 0 10px #dc29ec) drop-shadow(0 0 2px #e054ec);
+          filter: drop-shadow(0 0 10px #dc29ec) drop-shadow(0 0 2px #e054ec);
+}
+
+.display-container .header-container #tunatunr-logo svg g path {
+  fill: white;
+  stroke: white;
+}
+
+.display-container .header-container #tunatunr-logo #logo-dash {
+  fill: none;
+}
+
+.display-container .tagline-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #33dbdb;
+  font-family: sans-serif;
+  font-size: 20px;
   font-style: italic;
+  letter-spacing: 1px;
+  margin-top: -30px;
 }
 
-span.bass {
-  font-size: 2rem;
-  position: relative;
-  display: inline-block;
-  bottom: -20px;
-  transform: rotate(40deg);
-  z-index: 1;
+.display-container .tagline-container span {
+  font-weight: bold;
+  font-style: oblique;
+  text-shadow: 5px 0 rgba(204, 255, 18, 0.4);
 }
 
-.playlist-container {
-  border: 4px solid rgb(94, 112, 134);
-  border-radius: 5px;
-  font-family: 'Heebo', sans-serif;
-  text-align: center;
+.display-container .content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  height: 100%;
+  padding: 15px;
+  outline: 2px rgba(204, 255, 18, 0.6) solid;
 }
 
-.playlist-container h2 {
-  margin-top: 3rem;
+.display-container .content-container::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 7px;
+  height: 94%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+          box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
 }
 
-.song-container {
-  text-align: center;
+.display-container .content-container::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+          box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+}
+
+.display-container .content-container .content-container-title {
+  display: none;
+}
+
+.display-container .content-container .song-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 1fr .5fr .5fr;
-  margin: 3rem 2rem 3rem 2rem;
-  width: 50vw;
+  -ms-grid-columns: 5fr 3fr 5fr 1fr 1fr 1fr;
+      grid-template-columns: 5fr 3fr 5fr 1fr 1fr 1fr;
+  padding: 10px;
+  width: 100%;
+  outline: 1px #33dbdb solid;
+  color: #33dbdb;
+  margin-bottom: 10px;
 }
 
-.song-title,
-.artist,
-.song-time,
-.song-album,
-.song-favorite,
-.song-delete {
-  color: #e0e0e0;
-  background-color: rgba(5, 10, 17, 0.3);
-  border: 1px inset rgba(255,255,255,.2);
-  padding: .5rem;
+.display-container .content-container .song-container .song-title {
+  color: #f7c5fc;
 }
 
-.song-favorite {
-  background-color: rgba(75, 155, 75, .7);
-}
-
-.song-album {
-  overflow: hidden;
-}
-
-.add-song {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.song-delete {
-  background-color: rgb(187, 81, 81);
+.display-container .display-container-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: white;
+  -webkit-box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
+          box-shadow: 0 0 15px #dc29ec, 0 0 5px 2px #e25dee;
 }
 
 .form-container {
-  font-family: 'Heebo', sans-serif;
-  border-radius: 5px;
-  margin-top: 5rem;
-  border: 4px solid rgb(94, 112, 134);
-}
-
-form {
-  border: none;
-}
-
-input {
-  box-shadow: 2px 2px 15px rgba(0,0,0,.3);
-  background-color: rgba(255,255,255,.5);
-  color: #333;
-}
-
-.btn-submit {
-  background: rgba(255, 255, 255, .1);
-  color: #e0e0e0;
-  padding: 20px;
-  
-}
-
-.form-body {
-  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.form-body input {
-  margin-bottom: 1rem;
-  padding: .7rem;
-  width: 40vw;
+.form-container .form-title {
+  color: turquoise;
+  text-transform: lowercase;
+  font-family: sans-serif;
+  font-style: oblique;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 30px 0 10px 0;
 }
 
-.form-body .btn-submit {
-  width: 8vw;
-  margin-top: 1rem;
-  border-radius: 8px;
-  border: none;
+.form-container .form-title span {
+  font-weight: bold;
+  font-style: oblique;
+  text-shadow: 5px 0 rgba(204, 255, 18, 0.4);
 }
+
+.form-container .form-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.form-container .form-body input {
+  width: 400px;
+  padding: 7px 7px 7px 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(62, 15, 66, 0);
+  border: #33dbdb 1px solid;
+}
+
+.form-container .form-body input:focus {
+  border: white 1px solid;
+  -webkit-box-shadow: 0 0 10px violet;
+          box-shadow: 0 0 10px violet;
+}
+
+.form-container .form-body ::-webkit-input-placeholder {
+  color: rgba(204, 255, 18, 0.6);
+  font-family: sans-serif;
+  font-size: 16px;
+  font-style: oblique;
+  letter-spacing: 1px;
+}
+
+.form-container .form-body :-ms-input-placeholder {
+  color: rgba(204, 255, 18, 0.6);
+  font-family: sans-serif;
+  font-size: 16px;
+  font-style: oblique;
+  letter-spacing: 1px;
+}
+
+.form-container .form-body ::-ms-input-placeholder {
+  color: rgba(204, 255, 18, 0.6);
+  font-family: sans-serif;
+  font-size: 16px;
+  font-style: oblique;
+  letter-spacing: 1px;
+}
+
+.form-container .form-body ::placeholder {
+  color: rgba(204, 255, 18, 0.6);
+  font-family: sans-serif;
+  font-size: 16px;
+  font-style: oblique;
+  letter-spacing: 1px;
+}
+
+.form-container .form-body .form-submit {
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(216, 18, 255, 0.2);
+  border: 1px #fb8eff solid;
+}
+
+.form-container .form-body .form-submit:hover {
+  border: white 1px solid;
+  -webkit-box-shadow: 0 0 10px violet;
+          box-shadow: 0 0 10px violet;
+}
+/*# sourceMappingURL=App.css.map */

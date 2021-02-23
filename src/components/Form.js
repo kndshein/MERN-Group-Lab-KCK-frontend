@@ -15,41 +15,43 @@ const Form = (props) => {
 
   return (
     <div className="form-container">
-      <h3 className="add-song">Add a song. No fishy business.</h3>
+      <div className="form-title">
+        Add a song. <span>No fishy business</span>
+      </div>
       <form className="form-body" onSubmit={handleSubmit}>
-        <div>Song name</div>
         <input
           type="text"
           name="name"
+          id="name"
           value={formData.name}
-          placeholder="Never Gonna Give You Up"
+          placeholder="song title"
           onChange={handleChange}
         />
-        <div>Artist name</div>
         <input
           type="text"
           name="artist"
+          id="artist"
           value={formData.artist}
-          placeholder="Rick Astley"
+          placeholder="artist name"
           onChange={handleChange}
         />
-        <div>Album name</div>
         <input
           type="text"
           name="album"
+          id="album"
           value={formData.album}
-          placeholder="Whenever You Need Somebody"
+          placeholder="album name"
           onChange={handleChange}
         />
-        <div>Song length</div>
         <input
           type="text"
           name="time"
+          id="length"
           value={formData.time}
-          placeholder="3:32"
+          placeholder="song duration"
           onChange={handleChange}
         />
-        <input className="btn-submit" type="submit" value="Krillin' It" />
+        <input className="form-submit" type="submit" value="Krillin' It" />
       </form>
     </div>
   );
