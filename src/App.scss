@@ -89,6 +89,8 @@ body {
     height: 100%;
     padding: 15px;
     outline: 2px rgba(204, 255, 18, 0.6) solid;
+    overflow: hidden;
+    overflow-y: visible;
 
     &::before {
       display: block;
@@ -180,7 +182,7 @@ body {
       width: 400px;
       padding: 7px 7px 7px 10px;
       margin-bottom: 10px;
-      font-size: 18px;
+      font-size: 16px;
       color: white;
       background-color: rgba(62, 15, 66, 0);
       border: rgb(51, 219, 219) 1px solid;
