@@ -35,17 +35,19 @@ function App() {
   };
 
   const handleFavorite = (song) => {
-    axios.put(url + "/tunatunr/id/" + song._id, { favorite: true }).then(() => {
-      getSongs();
-    });
-  };
-
-  const handleUnFavorite = (song) => {
-    axios
-      .put(url + "/tunatunr/id/" + song._id, { favorite: false })
-      .then(() => {
-        getSongs();
-      });
+    if (song.favorite) {
+      axios
+        .put(url + "/tunatunr/id/" + song._id, { favorite: false })
+        .then(() => {
+          getSongs();
+        });
+    } else {
+      axios
+        .put(url + "/tunatunr/id/" + song._id, { favorite: true })
+        .then(() => {
+          getSongs();
+        });
+    }
   };
 
   const handleDelete = (song) => {
@@ -70,7 +72,7 @@ function App() {
         handleFavorite={handleFavorite}
       />
       <div className="bottom-container">
-        <Favorite songs={songs} handleUnFavorite={handleUnFavorite} />
+        <Favorite songs={songs} />
         <Form song={emptySong} handleSubmit={handleCreate} />
       </div>
     </div>

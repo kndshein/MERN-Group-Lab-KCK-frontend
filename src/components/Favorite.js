@@ -23,12 +23,6 @@ const Favorite = (props) => {
               <div className="song-artist">{song.artist}</div>
               <div className="song-album">{song.album}</div>
               <div className="song-time">{song.time}</div>
-              <button
-                className="song-favorite"
-                onClick={() => props.handleUnFavorite(song)}
-              >
-                +
-              </button>
             </div>
           );
         })}
