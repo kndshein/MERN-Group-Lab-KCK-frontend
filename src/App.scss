@@ -153,7 +153,15 @@ body {
         width: 20px;
 
         path {
-          fill: #be2424;
+          fill: #aaa1a1;
+        }
+
+        &.active {
+          filter: drop-shadow(0 0 10px rgba(220, 41, 236, 1))
+            drop-shadow(0 0 2px rgb(224, 84, 236));
+          path {
+            fill: rgb(255, 255, 255);
+          }
         }
       }
     }

@@ -73,8 +73,7 @@ const Display = (props) => {
                 <div className="song-album">{song.album}</div>
                 <div className="song-time">{song.time}</div>
                 <GiTechnoHeart
-                  // style={{ color: "#999", fontSize: "25px" }}
-                  className="heart"
+                  className={`heart${song.favorite ? " active" : ""}`}
                   onClick={() => props.handleFavorite(song)}
                 />
                 <button

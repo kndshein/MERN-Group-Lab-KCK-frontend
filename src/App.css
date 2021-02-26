@@ -181,7 +181,16 @@ body {
 }
 
 .display-container .content-container .song-container .heart path {
-  fill: #be2424;
+  fill: #aaa1a1;
+}
+
+.display-container .content-container .song-container .heart.active {
+  -webkit-filter: drop-shadow(0 0 10px #dc29ec) drop-shadow(0 0 2px #e054ec);
+          filter: drop-shadow(0 0 10px #dc29ec) drop-shadow(0 0 2px #e054ec);
+}
+
+.display-container .content-container .song-container .heart.active path {
+  fill: white;
 }
 
 .display-container .display-container-bottom {
