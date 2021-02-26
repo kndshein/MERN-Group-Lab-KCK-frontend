@@ -9,9 +9,8 @@ function App() {
   // Url variable
   const url = "https://tunatunr.herokuapp.com";
 
-  // States
+  // State that hold the songs
   const [songs, setSongs] = React.useState([]);
-  const [favoritedSong, setFavoritedSong] = React.useState([]);
 
   // Empty API
   const emptySong = {
@@ -40,9 +39,9 @@ function App() {
     });
   };
 
-  const handleFavorite = (song) => {
-    setFavoritedSong({ ...favoritedSong }, song);
-  };
+  // const handleFavorite = (song) => {
+  //   setFavoritedSong({ ...favoritedSong }, song);
+  // };
 
   React.useEffect(() => {
     getSongs();
@@ -50,16 +49,11 @@ function App() {
 
   return (
     <div className="App">
-      <Display
-        songs={songs}
-        handleDelete={handleDelete}
-        handleFavorite={handleFavorite}
-      />
-      <Form
-        song={emptySong}
-        handleSubmit={handleCreate}
-        favoritedSong={favoritedSong}
-      />
+      <Display songs={songs} handleDelete={handleDelete} />
+      <div className="bottom-container">
+        <div className="favorite-container">Poop</div>
+        <Form song={emptySong} handleSubmit={handleCreate} />
+      </div>
     </div>
   );
 }

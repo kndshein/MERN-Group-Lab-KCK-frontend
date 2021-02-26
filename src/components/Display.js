@@ -63,19 +63,14 @@ const Display = (props) => {
         </div>
         <div className="content-container">
           <div className="content-container-title">full playlist</div>
-          {props.songs.map((song) => {
+          {props.songs.map((song, index) => {
             return (
-              <div className="song-container">
+              <div className="song-container" key={index}>
                 <div className="song-title">{song.name}</div>
                 <div className="song-artist">{song.artist}</div>
                 <div className="song-album">{song.album}</div>
                 <div className="song-time">{song.time}</div>
-                <button
-                  className="song-favorite"
-                  onClick={() => props.handleFavorite(song)}
-                >
-                  +
-                </button>
+                <button className="song-favorite">+</button>
                 <button
                   className="song-delete"
                   onClick={() => props.handleDelete(song)}
@@ -93,7 +88,7 @@ const Display = (props) => {
 
   const loading = () => "Loading";
 
-  return props.songs ? loaded() : loading();
+  return props.songs.length > 0 ? loaded() : loading();
 };
 
 export default Display;

@@ -150,65 +150,71 @@ body {
     box-shadow: 0 0 15px rgba(220, 41, 236, 1), 0 0 5px 2px rgb(226, 93, 238);
   }
 }
+.bottom-container {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
 
-.form-container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-end;
-  width: 100%;
-  margin: 0 auto;
-
-  .form-title {
-    color: turquoise;
-    text-transform: lowercase;
-    font-family: sans-serif;
-    font-style: oblique;
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin: 30px 0 10px 0;
-
-    span {
-      font-weight: bold;
-      font-style: oblique;
-      text-shadow: 5px 0 rgba(204, 255, 18, 0.4);
-    }
-  }
-
-  .form-body {
+  .form-container {
     display: flex;
     flex-flow: column nowrap;
+    align-items: flex-end;
+    width: 100%;
+    margin: 0 auto;
 
-    input {
-      width: 400px;
-      padding: 7px 7px 7px 10px;
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: white;
-      background-color: rgba(62, 15, 66, 0);
-      border: rgb(51, 219, 219) 1px solid;
-      &:focus {
-        border: white 1px solid;
-        box-shadow: 0 0 10px violet;
+    .form-title {
+      color: turquoise;
+      text-transform: lowercase;
+      font-family: sans-serif;
+      font-style: oblique;
+      font-size: 20px;
+      letter-spacing: 1px;
+      margin: 30px 0 10px 0;
+
+      span {
+        font-weight: bold;
+        font-style: oblique;
+        text-shadow: 5px 0 rgba(204, 255, 18, 0.4);
       }
     }
 
-    ::placeholder {
-      color: rgba(204, 255, 18, 0.6);
-      font-family: sans-serif;
-      font-size: 16px;
-      font-style: oblique;
-      letter-spacing: 1px;
-    }
+    .form-body {
+      display: flex;
+      flex-flow: column nowrap;
 
-    .form-submit {
-      cursor: pointer;
-      color: white;
-      font-size: 18px;
-      background-color: rgba(216, 18, 255, 0.2);
-      border: 1px rgb(251, 142, 255) solid;
-      &:hover {
-        border: white 1px solid;
-        box-shadow: 0 0 10px violet;
+      input {
+        width: 400px;
+        padding: 7px 7px 7px 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: white;
+        background-color: rgba(62, 15, 66, 0);
+        border: rgb(51, 219, 219) 1px solid;
+        &:focus {
+          border: white 1px solid;
+          box-shadow: 0 0 10px violet;
+        }
+      }
+
+      ::placeholder {
+        color: rgba(204, 255, 18, 0.6);
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: oblique;
+        letter-spacing: 1px;
+      }
+
+      .form-submit {
+        cursor: pointer;
+        color: white;
+        font-size: 18px;
+        background-color: rgba(216, 18, 255, 0.2);
+        border: 1px rgb(251, 142, 255) solid;
+        &:hover {
+          border: white 1px solid;
+          box-shadow: 0 0 10px violet;
+        }
       }
     }
   }

@@ -2,7 +2,6 @@ import React from "react";
 
 const Form = (props) => {
   const [formData, setFormData] = React.useState(props.song);
-
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
@@ -13,12 +12,16 @@ const Form = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+  React.useEffect(() => {
+    setFormData(props.song);
+  }, [props.song]);
+
   return (
     <div className="form-container">
       <div className="form-title">
         Add a song. <span>No fishy business</span>
       </div>
-      <form className="form-body" onSubmit={handleSubmit}>
+      <form className="form-body" autoComplete="off" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
