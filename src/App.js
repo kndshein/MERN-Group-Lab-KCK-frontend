@@ -8,7 +8,7 @@ import Form from "./components/Form";
 
 function App() {
   // Url variable
-  const url = "https://tunatunr.herokuapp.com";
+  const url = "https://tunatunr-backend-rails.herokuapp.com";
 
   // State that hold the songs
   const [songs, setSongs] = React.useState([]);
@@ -37,13 +37,13 @@ function App() {
   const handleFavorite = (song) => {
     if (song.favorite) {
       axios
-        .put(url + "/tunatunr/id/" + song._id, { favorite: false })
+        .put(url + "/tunatunr/id/" + song.id, { favorite: false })
         .then(() => {
           getSongs();
         });
     } else {
       axios
-        .put(url + "/tunatunr/id/" + song._id, { favorite: true })
+        .put(url + "/tunatunr/id/" + song.id, { favorite: true })
         .then(() => {
           getSongs();
         });
@@ -51,7 +51,7 @@ function App() {
   };
 
   const handleDelete = (song) => {
-    axios.delete(url + "/tunatunr/id/" + song._id).then(() => {
+    axios.delete(url + "/tunatunr/id/" + song.id).then(() => {
       getSongs();
     });
   };
