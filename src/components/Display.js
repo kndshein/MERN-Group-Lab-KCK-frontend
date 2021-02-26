@@ -1,6 +1,6 @@
 import React from "react";
 import { GiTechnoHeart } from "react-icons/gi";
-// import { ReactComponent as Heart } from '../techno-heart (2).svg'
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 const Display = (props) => {
   const loaded = () => {
@@ -76,12 +76,11 @@ const Display = (props) => {
                   className={`heart${song.favorite ? " active" : ""}`}
                   onClick={() => props.handleFavorite(song)}
                 />
-                <button
+                <RiDeleteBin5Line
                   className="song-delete"
                   onClick={() => props.handleDelete(song)}
-                >
-                  X
-                </button>
+                  style={{fontSize: "23px", cursor: "pointer" }}
+                />
               </div>
             );
           })}
