@@ -70,7 +70,12 @@ const Display = (props) => {
                 <div className="song-artist">{song.artist}</div>
                 <div className="song-album">{song.album}</div>
                 <div className="song-time">{song.time}</div>
-                <button className="song-favorite">+</button>
+                <button
+                  className="song-favorite"
+                  onClick={() => props.handleFavorite(song)}
+                >
+                  +
+                </button>
                 <button
                   className="song-delete"
                   onClick={() => props.handleDelete(song)}

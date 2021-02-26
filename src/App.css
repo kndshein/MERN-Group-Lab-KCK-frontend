@@ -174,11 +174,17 @@ body {
 
 .bottom-container {
   max-width: 1000px;
+  max-height: 300px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
   gap: 30px;
+}
+
+.bottom-container .favorite-container {
+  width: 100%;
+  margin-top: 30px;
 }
 
 .bottom-container .form-container {
@@ -192,8 +198,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  width: 100%;
-  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .bottom-container .form-container .form-title {
@@ -203,7 +208,7 @@ body {
   font-style: oblique;
   font-size: 20px;
   letter-spacing: 1px;
-  margin: 30px 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .bottom-container .form-container .form-title span {
@@ -223,7 +228,7 @@ body {
 }
 
 .bottom-container .form-container .form-body input {
-  width: 400px;
+  width: 350px;
   padding: 7px 7px 7px 10px;
   margin-bottom: 10px;
   font-size: 16px;

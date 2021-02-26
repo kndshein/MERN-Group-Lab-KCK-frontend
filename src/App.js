@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 
 import Display from "./components/Display";
+import Favorite from "./components/Favorite";
 import Form from "./components/Form";
 
 function App() {
@@ -33,6 +34,20 @@ function App() {
     });
   };
 
+  const handleFavorite = (song) => {
+    axios.put(url + "/tunatunr/id/" + song._id, { favorite: true }).then(() => {
+      getSongs();
+    });
+  };
+
+  const handleUnFavorite = (song) => {
+    axios
+      .put(url + "/tunatunr/id/" + song._id, { favorite: false })
+      .then(() => {
+        getSongs();
+      });
+  };
+
   const handleDelete = (song) => {
     axios.delete(url + "/tunatunr/id/" + song._id).then(() => {
       getSongs();
@@ -49,9 +64,13 @@ function App() {
 
   return (
     <div className="App">
-      <Display songs={songs} handleDelete={handleDelete} />
+      <Display
+        songs={songs}
+        handleDelete={handleDelete}
+        handleFavorite={handleFavorite}
+      />
       <div className="bottom-container">
-        <div className="favorite-container">Poop</div>
+        <Favorite songs={songs} handleUnFavorite={handleUnFavorite} />
         <Form song={emptySong} handleSubmit={handleCreate} />
       </div>
     </div>

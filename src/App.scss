@@ -152,16 +152,21 @@ body {
 }
 .bottom-container {
   max-width: 1000px;
+  max-height: 300px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 30px;
+
+  .favorite-container {
+    width: 100%;
+    margin-top: 30px;
+  }
 
   .form-container {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    width: 100%;
-    margin: 0 auto;
+    margin-top: 30px;
 
     .form-title {
       color: turquoise;
@@ -170,7 +175,7 @@ body {
       font-style: oblique;
       font-size: 20px;
       letter-spacing: 1px;
-      margin: 30px 0 10px 0;
+      margin-bottom: 10px;
 
       span {
         font-weight: bold;
@@ -184,7 +189,7 @@ body {
       flex-flow: column nowrap;
 
       input {
-        width: 400px;
+        width: 350px;
         padding: 7px 7px 7px 10px;
         margin-bottom: 10px;
         font-size: 16px;
