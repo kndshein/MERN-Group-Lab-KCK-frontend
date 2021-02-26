@@ -89,8 +89,6 @@ body {
     height: 100%;
     padding: 15px;
     outline: 2px rgba(204, 255, 18, 0.6) solid;
-    overflow: hidden;
-    overflow-y: visible;
 
     &::before {
       display: block;
@@ -117,54 +115,72 @@ body {
     }
 
     .content-container-title {
-      display: none;
-      // color: rgb(51, 219, 219);
-      // text-shadow: 5px 0 rgba(168, 218, 33, 0.3);
-      // font-family: sans-serif;
-      // font-size: 36px;
-      // font-style: oblique;
+      border-bottom: 1px rgba(204, 255, 18, 0.6) solid;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 0 10px 0;
+
+        li {
+          list-style-type: none;
+          font-style: oblique;
+          text-transform: lowercase;
+          color: rgba(204, 255, 18, 1);
+        }
+      }
     }
 
-    .song-container {
-      display: grid;
-      grid-template-columns: 5fr 4fr 5fr 1fr 25px 25px;
-      gap: 10px;
-      padding: 10px;
-      width: 100%;
-      outline: 1px rgb(51, 219, 219) solid;
-      color: rgb(51, 219, 219);
-      margin-bottom: 10px;
+    .content-container-container {
+      overflow: hidden;
+      overflow-y: visible;
+      padding: 1px;
+      margin-top: 10px;
+      // border: 1px white solid;
 
-      .song-title,
-      .song-artist,
-      .song-album,
-      .song-time {
-        display: flex;
-        align-items: center;
-      }
-
-      .song-title {
+      .song-container {
+        display: grid;
+        grid-template-columns: 5fr 4fr 5fr 1fr 25px 25px;
+        gap: 10px;
+        padding: 10px;
+        width: 100%;
+        outline: 1px rgb(51, 219, 219) solid;
         color: rgb(247, 197, 252);
-      }
+        margin-bottom: 10px;
 
-      .heart {
-        cursor: pointer;
-        height: 100%;
-        width: 20px;
-
-        path {
-          fill: #aaa1a1;
-        }
-        .song-delete {
-          font-size: 35px;
+        .song-title,
+        .song-artist,
+        .song-album,
+        .song-time {
+          display: flex;
+          align-items: center;
         }
 
-        &.active {
-          filter: drop-shadow(0 0 10px rgba(220, 41, 236, 1))
-            drop-shadow(0 0 2px rgb(224, 84, 236));
+        .song-title {
+          font-weight: 500;
+          color: white;
+        }
+
+        .heart {
+          cursor: pointer;
+          height: 100%;
+          width: 20px;
+
           path {
-            fill: rgb(255, 255, 255);
+            fill: #aaa1a1;
           }
+
+          &.active {
+            filter: drop-shadow(0 0 10px rgba(220, 41, 236, 1))
+              drop-shadow(0 0 2px rgb(224, 84, 236));
+            path {
+              fill: rgb(255, 255, 255);
+            }
+          }
+        }
+
+        .song-delete {
+          color: rgb(51, 219, 219);
         }
       }
     }

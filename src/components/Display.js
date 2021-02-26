@@ -64,26 +64,35 @@ const Display = (props) => {
           tunatunr playlist, <span>drop the bass</span>
         </div>
         <div className="content-container">
-          <div className="content-container-title">full playlist</div>
-          {props.songs.map((song, index) => {
-            return (
-              <div className="song-container" key={index}>
-                <div className="song-title">{song.name}</div>
-                <div className="song-artist">{song.artist}</div>
-                <div className="song-album">{song.album}</div>
-                <div className="song-time">{song.time}</div>
-                <GiTechnoHeart
-                  className={`heart${song.favorite ? " active" : ""}`}
-                  onClick={() => props.handleFavorite(song)}
-                />
-                <RiDeleteBin5Line
-                  className="song-delete"
-                  onClick={() => props.handleDelete(song)}
-                  style={{fontSize: "23px", cursor: "pointer" }}
-                />
-              </div>
-            );
-          })}
+          <div className="content-container-title">
+            <ul>
+              <li>Song Title</li>
+              <li>Artist Name</li>
+              <li>Album Title</li>
+              <li>Duration</li>
+            </ul>
+          </div>
+          <div className="content-container-container">
+            {props.songs.map((song, index) => {
+              return (
+                <div className="song-container" key={index}>
+                  <div className="song-title">{song.name}</div>
+                  <div className="song-artist">{song.artist}</div>
+                  <div className="song-album">{song.album}</div>
+                  <div className="song-time">{song.time}</div>
+                  <GiTechnoHeart
+                    className={`heart${song.favorite ? " active" : ""}`}
+                    onClick={() => props.handleFavorite(song)}
+                  />
+                  <RiDeleteBin5Line
+                    className="song-delete"
+                    onClick={() => props.handleDelete(song)}
+                    style={{ fontSize: "23px", cursor: "pointer" }}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="display-container-bottom"></div>
       </div>
