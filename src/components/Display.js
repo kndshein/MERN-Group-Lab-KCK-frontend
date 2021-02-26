@@ -1,4 +1,6 @@
 import React from "react";
+import { GiTechnoHeart } from 'react-icons/gi'
+// import { ReactComponent as Heart } from '../techno-heart (2).svg'
 
 const Display = (props) => {
   const loaded = () => {
@@ -69,8 +71,8 @@ const Display = (props) => {
                 <div className="song-title">{song.name}</div>
                 <div className="song-artist">{song.artist}</div>
                 <div className="song-album">{song.album}</div>
-                <div className="song-time">{song.time}</div>
-                <button className="song-favorite">+</button>
+                <div className="song-time">{song.time}</div>          
+                <GiTechnoHeart style = {{ color: '#999', fontSize: '25px'}}/>              
                 <button
                   className="song-delete"
                   onClick={() => props.handleDelete(song)}
