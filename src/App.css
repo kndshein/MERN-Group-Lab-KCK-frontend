@@ -148,13 +148,26 @@ body {
 .display-container .content-container .song-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5fr 3fr 5fr 1fr 1fr 1fr;
-      grid-template-columns: 5fr 3fr 5fr 1fr 1fr 1fr;
+  -ms-grid-columns: 5fr 4fr 5fr 1fr 25px 25px;
+      grid-template-columns: 5fr 4fr 5fr 1fr 25px 25px;
+  gap: 10px;
   padding: 10px;
   width: 100%;
   outline: 1px #33dbdb solid;
   color: #33dbdb;
   margin-bottom: 10px;
+}
+
+.display-container .content-container .song-container .song-title,
+.display-container .content-container .song-container .song-artist,
+.display-container .content-container .song-container .song-album,
+.display-container .content-container .song-container .song-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .display-container .content-container .song-container .song-title {
@@ -163,6 +176,12 @@ body {
 
 .display-container .content-container .song-container .heart {
   cursor: pointer;
+  height: 100%;
+  width: 20px;
+}
+
+.display-container .content-container .song-container .heart path {
+  fill: #be2424;
 }
 
 .display-container .display-container-bottom {
@@ -184,11 +203,36 @@ body {
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
   gap: 30px;
+  margin-top: 30px;
 }
 
 .bottom-container .favorite-container {
   width: 100%;
-  margin-top: 30px;
+  border: #33dbdb 1px solid;
+}
+
+.bottom-container .favorite-container .inner-container {
+  margin: 10px;
+  border: #e25dee 2px solid;
+  height: 225px;
+  overflow: hidden;
+  overflow-y: visible;
+}
+
+.bottom-container .favorite-container .inner-container .song-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  border: #33dbdb 1px solid;
+  color: #33dbdb;
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.bottom-container .favorite-container .inner-container .song-container .song-title {
+  color: #f7c5fc;
 }
 
 .bottom-container .form-container {
@@ -202,7 +246,6 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin-top: 30px;
 }
 
 .bottom-container .form-container .form-title {
@@ -285,6 +328,7 @@ body {
   font-size: 18px;
   background-color: rgba(216, 18, 255, 0.2);
   border: 1px #fb8eff solid;
+  margin: 0;
 }
 
 .bottom-container .form-container .form-body .form-submit:hover {
