@@ -307,6 +307,7 @@ body {
     right: 0;
     margin: auto;
     outline: 1px solid red;
+    filter: url(#goo);
   }
 
   .cssload-dot {
@@ -318,8 +319,8 @@ body {
   }
   .cssload-dot:before {
     content: "";
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 25px;
     border-radius: 40px;
     background: rgb(251, 211, 1);
     position: absolute;
@@ -331,8 +332,8 @@ body {
 
   .cssload-dot:nth-child(5):before {
     z-index: 100;
-    width: 36.5px;
-    height: 36.5px;
+    width: 15px;
+    height: 15px;
     margin-left: -17.75px;
     margin-top: -17.75px;
     animation: cssload-dot-colors 2.6s ease infinite;
