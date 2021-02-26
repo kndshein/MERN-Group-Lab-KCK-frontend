@@ -43,7 +43,7 @@ const Form = (props) => {
           name="album"
           id="album"
           value={formData.album}
-          placeholder="album name"
+          placeholder="album title"
           onChange={handleChange}
         />
         <input
