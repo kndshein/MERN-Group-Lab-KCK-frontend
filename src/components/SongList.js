@@ -42,12 +42,12 @@ const SongList = (props) => {
   const loading = () => {
     return (
       <div id="loading-icon">
-        <div class="cssload-dots">
-          <div class="cssload-dot"></div>
-          <div class="cssload-dot"></div>
-          <div class="cssload-dot"></div>
-          <div class="cssload-dot"></div>
-          <div class="cssload-dot"></div>
+        <div className="cssload-dots">
+          <div className="cssload-dot"></div>
+          <div className="cssload-dot"></div>
+          <div className="cssload-dot"></div>
+          <div className="cssload-dot"></div>
+          <div className="cssload-dot"></div>
         </div>
 
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -67,6 +67,20 @@ const SongList = (props) => {
             </filter>
           </defs>
         </svg>
+
+        <div className="loading-message">
+          <div style={{ fontWeight: 700, marginBottom: "20px" }}>
+            The backend server hosted on Heroku is currently loading.
+          </div>
+          <div>Random Facts:</div>
+          <div>
+            The dot over the lower case 'i' or 'j' is known as a 'tittle.'
+          </div>
+          <div>
+            Water makes different pouring sounds depending on its temperature.
+          </div>
+          <div>Oh, and Pringles aren't actually potato chips.</div>
+        </div>
       </div>
     );
   };
